@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="皮膚科診療用 EASI・PASI計算機"><title>EASI・PASI 計算機 | 皮膚科診療用</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="site-header"><div class="container"><h1>EASI・PASI 計算機</h1><p>皮膚科診療用スコア計算ツール</p></div></header>
+<main class="container">
+<nav class="tabs"><button class="tab active" data-target="easi-panel" type="button">EASI</button><button class="tab" data-target="pasi-panel" type="button">PASI</button></nav>
+<section id="easi-panel" class="panel active-panel">
+<div class="card">
+<div class="top-row"><div><h2>EASI</h2><p class="muted">Eczema Area and Severity Index</p></div><div class="age-box"><label for="easi-age">年齢</label><div class="input-inline"><input id="easi-age" type="number" min="0" max="120" step="1" inputmode="numeric" placeholder="例：48"><span>歳</span></div><div id="easi-age-note" class="small-note">年齢を入力すると係数を自動選択します。</div></div></div>
+<div class="score-box"><div class="score-label">EASI</div><div class="score-value"><span id="easi-total">0.0</span><span class="score-max"> / 72</span></div><div id="easi-type" class="score-note">年齢未入力</div></div>
+<div id="easi-regions" class="regions"></div>
+<div class="actions"><button id="easi-copy" class="primary-btn" type="button">結果をコピー</button><button id="easi-reset" class="secondary-btn" type="button">リセット</button></div>
+</div>
+<details class="card"><summary>計算方法・注意事項・参考文献</summary><div class="info">
+<h3>計算方法</h3><p>各部位について、（紅斑＋浮腫／丘疹＋掻破痕＋苔癬化）× 面積スコア × 部位係数を計算し、4部位を合計します。</p>
+<p>8歳以上：頭頸部0.1、上肢0.2、体幹0.3、下肢0.4。8歳未満：頭頸部0.2、上肢0.2、体幹0.3、下肢0.3。</p>
+<p>重症度は0～3で、1.5および2.5の半点を使用できます。0.5は使用しません。面積スコアは0～6です。</p>
+<p>標準的な区分では、下肢に臀部・足、体幹に腋窩・鼠径部を含めます。</p>
+<h3>含めない所見</h3><p>活動性湿疹がない場合の乾燥、魚鱗癬、毛孔性苔癬、蕁麻疹、炎症後色素沈着などはEASIの炎症所見・病変面積に含めません。</p>
+<h3>注意</h3><p>本サイトはEASIの計算補助ツールです。最終的な評価は診察時の臨床所見に基づいてください。EASIは診察者間差が生じ得ます。</p>
+<h3>参考文献</h3><ol><li>Hanifin JM, Thurston M, Omoto M, Cherill R, Tofte SJ, Graeber M. The eczema area and severity index (EASI): assessment of reliability in atopic dermatitis. Exp Dermatol. 2001;10(1):11-18.</li><li>HOME Initiative. EASI user guidance.</li><li>Thomas KS, et al. The Eczema Area and Severity Index—A Practical Guide.</li></ol>
+</div></details>
+</section>
+<section id="pasi-panel" class="panel">
+<div class="card"><div><h2>PASI</h2><p class="muted">Psoriasis Area and Severity Index</p></div>
+<div class="score-box"><div class="score-label">PASI</div><div class="score-value"><span id="pasi-total">0.0</span><span class="score-max"> / 72</span></div></div>
+<div id="pasi-regions" class="regions"></div>
+<div class="actions"><button id="pasi-copy" class="primary-btn" type="button">結果をコピー</button><button id="pasi-reset" class="secondary-btn" type="button">リセット</button></div></div>
+<details class="card"><summary>計算方法・注意事項・参考文献</summary><div class="info">
+<h3>計算方法</h3><p>各部位について、（紅斑＋肥厚／浸潤＋鱗屑）× 面積スコア × 部位係数を計算し、4部位を合計します。</p>
+<p>部位係数：頭頸部0.1、上肢0.2、体幹0.3、下肢0.4。</p><p>重症度は0～4の整数、面積スコアは0～6です。最大値は72です。</p>
+<h3>注意</h3><p>本サイトはPASIの計算補助ツールです。最終的な評価は診察時の臨床所見に基づいてください。PASIは診察者間差が生じ得ます。</p>
+<h3>参考文献</h3><ol><li>Fredriksson T, Pettersson U. Severe psoriasis—oral therapy with a new retinoid. Dermatologica. 1978;157(4):238-244. doi:10.1159/000250839.</li><li>DermNet NZ. Psoriasis Area and Severity Index (PASI).</li></ol>
+</div></details></section>
+<p id="copy-status" class="copy-status" aria-live="polite"></p>
+</main>
+<footer><div class="container"><p>臨床用の計算補助ツールです。患者個人情報は入力しないでください。</p></div></footer>
+<script src="script.js"></script></body></html>
