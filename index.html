@@ -13,6 +13,7 @@
 <div class="top-row"><div><h2>EASI</h2><p class="muted">Eczema Area and Severity Index</p></div><div class="age-box"><label for="easi-age">年齢</label><div class="input-inline"><input id="easi-age" type="number" min="0" max="120" step="1" inputmode="numeric" placeholder="例：48"><span>歳</span></div><div id="easi-age-note" class="small-note">年齢を入力すると係数を自動選択します。</div></div></div>
 <div class="score-box"><div class="score-label">EASI</div><div class="score-value"><span id="easi-total">0.0</span><span class="score-max"> / 72</span></div><div id="easi-type" class="score-note">年齢未入力</div></div>
 <div id="easi-regions" class="regions"></div>
+<div class="bottom-score easi-bottom-score" aria-live="polite"><span>EASI</span> <strong id="easi-bottom-total">0.0</strong><span> / 72</span></div>
 <div class="actions"><button id="easi-copy" class="primary-btn" type="button">結果をコピー</button><button id="easi-reset" class="secondary-btn" type="button">リセット</button></div>
 </div>
 <details class="card"><summary>計算方法・注意事項・参考文献</summary><div class="info">
@@ -29,6 +30,7 @@
 <div class="card"><div><h2>PASI</h2><p class="muted">Psoriasis Area and Severity Index</p></div>
 <div class="score-box"><div class="score-label">PASI</div><div class="score-value"><span id="pasi-total">0.0</span><span class="score-max"> / 72</span></div></div>
 <div id="pasi-regions" class="regions"></div>
+<div class="bottom-score pasi-bottom-score" aria-live="polite"><span>PASI</span> <strong id="pasi-bottom-total">0.0</strong><span> / 72</span></div>
 <div class="actions"><button id="pasi-copy" class="primary-btn" type="button">結果をコピー</button><button id="pasi-reset" class="secondary-btn" type="button">リセット</button></div></div>
 <details class="card"><summary>計算方法・注意事項・参考文献</summary><div class="info">
 <h3>計算方法</h3><p>各部位について、（紅斑＋肥厚／浸潤＋鱗屑）× 面積スコア × 部位係数を計算し、4部位を合計します。</p>
